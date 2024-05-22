@@ -1,3 +1,4 @@
+
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
@@ -7,17 +8,15 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/IT and business consulting services/);
 });
 
-test("carousel", async ({ page }) => {
+test("cycle Through Homepage Headings", async ({ page }) => {
   await page.goto("https://www.cgi.com/en");
 
-  await expect(page.getByRole('heading', { name: 'Insights for trusted AI' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Digital triplet: AI-powered sibling to the digital twin' })).toBeVisible();
   await page.getByLabel("Next").click();
 
-  await expect(page.getByRole('heading', { name: 'Discover what it’s like to' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '  Supporting Iberdrola’s transformation' })).toBeVisible();
   await page.getByLabel("Next").click();
 
-  await expect(page.getByRole('heading', { name: 'Building a more sustainable and inclusive world' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Recognized for excellence' })).toBeVisible();
   await page.getByLabel("Next").click();
-
-  await expect(page.getByRole('heading', { name: 'Insights for trusted AI' })).toBeVisible();
 });
